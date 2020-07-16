@@ -21,5 +21,6 @@ public class PostService {
     @PostMapping("/api/post")
     public Post createPost(@RequestBody Post post){
         return postRepository.save(post);
+        
     }
 }
