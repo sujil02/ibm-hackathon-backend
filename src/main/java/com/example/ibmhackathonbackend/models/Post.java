@@ -2,12 +2,17 @@ package com.example.ibmhackathonbackend.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
+
+@Entity
+
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     private String description;
