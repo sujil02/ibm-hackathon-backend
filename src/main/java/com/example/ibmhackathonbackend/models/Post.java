@@ -18,6 +18,7 @@ public class Post {
     private String description;
     private String mediaType;
     private String media;
+    private int likes;
     @ManyToOne
     @JsonIgnore
     private PlatformUser user;
@@ -80,6 +81,14 @@ public class Post {
     }
 
     public Post() {
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
 
