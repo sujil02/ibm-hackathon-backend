@@ -22,11 +22,12 @@ public class PostController {
 
     @GetMapping("/api/posts")
     public Iterable<Post> findAllPosts() {
-        return postService.findAllPosts();
+        return postService.findPost();
     }
 
-    @PostMapping("/api/post")
+    @PostMapping("/api/posts/create")
     public Post createPost(@RequestBody Post post){
+        System.out.println(post.toString());
         return postService.createPost(post);
         
     }
