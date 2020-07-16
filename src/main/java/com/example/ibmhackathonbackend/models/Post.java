@@ -16,6 +16,8 @@ public class Post {
     private int id;
     private String title;
     private String description;
+    private String mediaType;
+    private String media;
     @ManyToOne
     @JsonIgnore
     private PlatformUser user;
@@ -52,11 +54,32 @@ public class Post {
         this.user = user;
     }
 
-    public Post(int id, String title, String description, PlatformUser user) {
+    public String getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(String mediaType) {
+        this.mediaType = mediaType;
+    }
+
+    public String getMedia() {
+        return media;
+    }
+
+    public void setMedia(String media) {
+        this.media = media;
+    }
+
+    public Post(int id, String title, String description, String mediaType, String media, PlatformUser user) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.mediaType = mediaType;
+        this.media = media;
         this.user = user;
+    }
+
+    public Post() {
     }
 
 

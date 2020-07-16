@@ -7,13 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(allowCredentials = "true")
+@RestController
 public class PostService {
 
     @Autowired
     PostRepository postRepository;
 
-    @GetMapping("/api/posts")
     public Iterable<Post> findAllPosts() {
         return postRepository.findAll();
     }
@@ -23,4 +26,5 @@ public class PostService {
         return postRepository.save(post);
         
     }
+
 }
