@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ibmhackathonbackend.repositories.PlatformUserRepository;
 import com.example.ibmhackathonbackend.models.PlatformUser;
 
-
+@CrossOrigin(allowCredentials = "true")
+@RestController
 public class PlatformUserService {
 
     @Autowired
     PlatformUserRepository userRepository;
 
-    @GetMapping("/api/users")
     public Iterable<PlatformUser> findAllusers() {
         return userRepository.findAll();
     }
